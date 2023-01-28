@@ -3,6 +3,7 @@ import {
   Image,
   ImageBackground,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -43,6 +44,10 @@ const Home = () => {
           <Text style={{color: 'white', fontSize: 22, fontWeight: 'bold'}}>
             Search the city by the name
           </Text>
+          <View>
+            <TextInput />
+            <Icon name="search" size={22} color="white" />
+          </View>
         </View>
       </View>
     </View>
