@@ -4,7 +4,7 @@ import {deviceHeight, deviceWidth} from './Diamension';
 
 const Card = ({name, image}) => {
   return (
-    <TouchableOpacity style={{marginHorizontal: 10}}>
+    <TouchableOpacity style={{marginHorizontal: 10}} onPress={() => {}}>
       <ImageBackground
         source={image}
         imageStyle={{borderRadius: 10}}
