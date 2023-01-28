@@ -24,7 +24,7 @@ const Card = ({name, image, navigation}) => {
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            color: 'red',
+            color: 'white',
             textAlignVertical: 'center',
           }}>
           {name}

@@ -42,7 +42,7 @@ const Details = props => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{color: 'gray', fontSize: 22}}>{title}</Text>
+          <Text style={{color: 'white', fontSize: 22}}>{title}</Text>
           <Text style={{color: 'white', fontSize: 22}}>{value}</Text>
         </View>
       </View>
