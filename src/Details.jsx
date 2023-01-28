@@ -70,9 +70,10 @@ const Details = props => {
                 {data['weather'][0]['main']}
               </Text>
             </View>
-            <Text style={{color: 'white', fontSize: 40}}>
+            <Text style={{color: 'white', fontSize: 64}}>
               {(data['main']['temp'] - 273).toFixed(2)}&deg; C
             </Text>
+            <Text style={{color: 'white', fontSize: 19}}>Weather Details</Text>
           </View>
         ) : (
           <ActivityIndicator size={'large'} />
