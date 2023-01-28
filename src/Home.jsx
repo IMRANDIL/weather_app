@@ -12,7 +12,7 @@ const Home = () => {
         imageStyle={{opacity: 0.6, backgroundColor: 'black'}}
       />
       <View style={{position: 'absolute'}}>
-        <View>
+        <View style={{paddingHorizontal: 10, paddingVertical: 20}}>
           <TouchableOpacity>
             <Icon name="menu" size={46} color="white" />
           </TouchableOpacity>
