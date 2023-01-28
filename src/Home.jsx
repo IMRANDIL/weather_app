@@ -20,11 +20,11 @@ const Home = () => {
       <View
         style={{
           position: 'absolute',
+          paddingHorizontal: 10,
+          paddingVertical: 20,
         }}>
         <View
           style={{
-            paddingHorizontal: 10,
-            paddingVertical: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -37,6 +37,12 @@ const Home = () => {
             source={require('../assets/images/user.jpg')}
             style={{height: 46, width: 46, borderRadius: 50}}
           />
+        </View>
+        <View style={{paddingHorizontal: 20, marginTop: 100}}>
+          <Text style={{fontSize: 40, color: 'white'}}>Hello Aia</Text>
+          <Text style={{color: 'white', fontSize: 22, fontWeight: 'bold'}}>
+            Search the city by the name
+          </Text>
         </View>
       </View>
     </View>
