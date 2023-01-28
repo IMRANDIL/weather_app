@@ -44,8 +44,17 @@ const Home = () => {
           <Text style={{color: 'white', fontSize: 22, fontWeight: 'bold'}}>
             Search the city by the name
           </Text>
-          <View>
-            <TextInput />
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <TextInput
+              placeholder="Search City"
+              placeholderTextColor="white"
+              style={{padding: 10, color: 'white', width: deviceWidth * 0.6}}
+            />
             <Icon name="search" size={22} color="white" />
           </View>
         </View>
