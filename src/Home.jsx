@@ -48,7 +48,10 @@ const Home = () => {
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'space-between',
+              borderRadius: 20,
+              borderWidth: 1,
+              borderColor: 'white',
             }}>
             <TextInput
               placeholder="Search City"
