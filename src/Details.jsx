@@ -101,7 +101,7 @@ const Details = props => {
             </View>
           </>
         ) : (
-          <ActivityIndicator size={'large'} />
+          <ActivityIndicator size={80} color="white" />
         )}
       </View>
     </View>
