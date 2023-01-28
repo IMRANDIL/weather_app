@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   ImageBackground,
@@ -11,6 +11,8 @@ import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Home = () => {
+  const [city, setCity] = useState();
+
   return (
     <View>
       <ImageBackground
@@ -56,11 +58,15 @@ const Home = () => {
               paddingHorizontal: 10,
             }}>
             <TextInput
+              value={city}
+              onChangeText={val => setCity(val)}
               placeholder="Search City"
               placeholderTextColor="white"
               style={{padding: 10, color: 'white', fontSize: 20}}
             />
-            <Icon name="search" size={22} color="white" />
+            <TouchableOpacity onPress={() => {}}>
+              <Icon name="search" size={22} color="white" />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
