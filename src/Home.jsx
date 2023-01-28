@@ -49,14 +49,16 @@ const Home = () => {
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderRadius: 20,
+              borderRadius: 50,
               borderWidth: 1,
               borderColor: 'white',
+              marginTop: 17,
+              paddingHorizontal: 10,
             }}>
             <TextInput
               placeholder="Search City"
               placeholderTextColor="white"
-              style={{padding: 10, color: 'white', width: deviceWidth * 0.6}}
+              style={{padding: 10, color: 'white', fontSize: 20}}
             />
             <Icon name="search" size={22} color="white" />
           </View>
