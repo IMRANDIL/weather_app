@@ -83,7 +83,8 @@ const Details = props => {
               }}>
               <View>
                 <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
-                <Text style={{fontSize: 22, color: 'white'}}>
+                <Text
+                  style={{fontSize: 22, color: 'white', textAlign: 'center'}}>
                   {data['weather'][0]['main']}
                 </Text>
               </View>
