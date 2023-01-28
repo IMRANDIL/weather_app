@@ -97,6 +97,7 @@ const Home = () => {
             My Location
           </Text>
           <FlatList
+            horizontal
             data={cities}
             renderItem={item => {
               return <Card name={item.item.name} image={item.item.image} />;
