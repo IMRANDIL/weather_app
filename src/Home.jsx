@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  FlatList,
   Image,
   ImageBackground,
   Text,
@@ -9,9 +10,33 @@ import {
 } from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Card from './Card';
 
 const Home = () => {
   const [city, setCity] = useState();
+
+  const cities = [
+    {
+      name: 'Araria',
+      image: require('../assets/images/image3.jpg'),
+    },
+    {
+      name: 'Purnia',
+      image: require('../assets/images/image4.jpg'),
+    },
+    {
+      name: 'Katihar',
+      image: require('../assets/images/image5.jpg'),
+    },
+    {
+      name: 'Saharsa',
+      image: require('../assets/images/image6.jpg'),
+    },
+    {
+      name: 'Patna',
+      image: require('../assets/images/image7.jpg'),
+    },
+  ];
 
   return (
     <View>
@@ -68,6 +93,13 @@ const Home = () => {
               <Icon name="search" size={22} color="white" />
             </TouchableOpacity>
           </View>
+          <Text style={{color: 'white', fontSize: 22, paddingHorizontal: 10}}>
+            My Location
+          </Text>
+          <FlatList
+            data={cities}
+            renderItem={item => <Card name={item.name} image={item.image} />}
+          />
         </View>
       </View>
     </View>
