@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Alert,
   FlatList,
   Image,
   ImageBackground,
@@ -67,7 +68,7 @@ const Home = props => {
           />
         </View>
         <View style={{paddingHorizontal: 20, marginTop: 100}}>
-          <Text style={{fontSize: 40, color: 'white'}}>Hello Aia</Text>
+          <Text style={{fontSize: 40, color: 'white'}}>Hello Folks!</Text>
           <Text style={{color: 'white', fontSize: 22, fontWeight: 'bold'}}>
             Search the city by the name
           </Text>
@@ -96,11 +97,14 @@ const Home = props => {
               }}
             />
             <TouchableOpacity
-              onPress={() =>
+              onPress={() => {
+                if (city === null || city === '' || city === undefined) {
+                  return Alert.alert('Please search the city');
+                }
                 props.navigation.navigate('Details', {
                   name: city,
-                })
-              }>
+                });
+              }}>
               <Icon
                 name="search"
                 size={22}

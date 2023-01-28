@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -26,7 +27,7 @@ const Details = props => {
         console.log(data);
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [name]);
 
   const dataComp = (title, value) => {
     return (
