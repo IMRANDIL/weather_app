@@ -96,7 +96,7 @@ const Home = () => {
           <Text
             style={{
               color: 'white',
-              fontSize: 22,
+              fontSize: 25,
               paddingHorizontal: 10,
               marginBottom: 20,
               marginTop: deviceHeight / 5,
