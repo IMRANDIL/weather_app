@@ -1,16 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Text,
   View,
   ImageBackground,
   Image,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {API_KEY} from './Constants';
 const Details = props => {
   const {name} = props.route.params;
+  const [data, setData] = useState();
 
   useEffect(() => {
     fetch(
@@ -20,6 +22,7 @@ const Details = props => {
         return response.json();
       })
       .then(data => {
+        setData(data);
         console.log(data);
       })
       .catch(error => console.log(error));
@@ -54,6 +57,7 @@ const Details = props => {
           />
         </View>
       </View>
+      {data ? <Text>data</Text> : <ActivityIndicator size={'large'} />}
     </View>
   );
 };
