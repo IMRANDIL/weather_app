@@ -123,7 +123,13 @@ const Home = props => {
             horizontal
             data={cities}
             renderItem={item => {
-              return <Card name={item.item.name} image={item.item.image} />;
+              return (
+                <Card
+                  name={item.item.name}
+                  image={item.item.image}
+                  navigation={props.navigation}
+                />
+              );
             }}
           />
         </View>
