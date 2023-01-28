@@ -87,10 +87,21 @@ const Home = () => {
               onChangeText={val => setCity(val)}
               placeholder="Search City"
               placeholderTextColor="white"
-              style={{padding: 10, color: 'white', fontSize: 20}}
+              style={{
+                padding: 10,
+                color: 'white',
+                fontSize: 20,
+                width: '100%',
+                position: 'relative',
+              }}
             />
             <TouchableOpacity onPress={() => {}}>
-              <Icon name="search" size={22} color="white" />
+              <Icon
+                name="search"
+                size={22}
+                color="white"
+                style={{position: 'absolute', right: 5, top: -10}}
+              />
             </TouchableOpacity>
           </View>
           <Text
