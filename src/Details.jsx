@@ -70,8 +70,8 @@ const Details = props => {
                 {data['weather'][0]['main']}
               </Text>
             </View>
-            <Text style={{color: 'white', fontSize: 20}}>
-              {data['main']['temp'] - 273}&deg; C
+            <Text style={{color: 'white', fontSize: 40}}>
+              {(data['main']['temp'] - 273).toFixed(2)}&deg; C
             </Text>
           </View>
         ) : (
