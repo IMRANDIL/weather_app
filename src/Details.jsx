@@ -94,6 +94,9 @@ const Details = props => {
                 Weather Details
               </Text>
               {dataComp('Wind', data['wind']['speed'])}
+              {dataComp('Pressure', data['main']['pressure'])}
+              {dataComp('Humidity', data['main']['humidity'])}
+              {dataComp('Visibility', data['visibility'])}
             </View>
           </>
         ) : (
