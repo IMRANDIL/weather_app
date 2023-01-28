@@ -57,11 +57,19 @@ const Details = props => {
           />
         </View>
         {data ? (
-          <View>
-            <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
-            <Text style={{fontSize: 22, color: 'white'}}>
-              {data['weather'][0]['main']}
-            </Text>
+          <View
+            style={{
+              justifyContent: 'space-evenly',
+              flexDirection: 'column',
+              alignItems: 'center',
+              height: deviceHeight - 100,
+            }}>
+            <View>
+              <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
+              <Text style={{fontSize: 22, color: 'white'}}>
+                {data['weather'][0]['main']}
+              </Text>
+            </View>
           </View>
         ) : (
           <ActivityIndicator size={'large'} />
