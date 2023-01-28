@@ -93,7 +93,14 @@ const Home = () => {
               <Icon name="search" size={22} color="white" />
             </TouchableOpacity>
           </View>
-          <Text style={{color: 'white', fontSize: 22, paddingHorizontal: 10}}>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: 22,
+              paddingHorizontal: 10,
+              marginBottom: 20,
+              marginTop: deviceHeight / 5,
+            }}>
             My Location
           </Text>
           <FlatList
