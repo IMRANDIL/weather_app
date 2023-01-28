@@ -59,6 +59,9 @@ const Details = props => {
         {data ? (
           <View>
             <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
+            <Text style={{fontSize: 22, color: 'white'}}>
+              {data['weather'][0]['main']}
+            </Text>
           </View>
         ) : (
           <ActivityIndicator size={'large'} />
