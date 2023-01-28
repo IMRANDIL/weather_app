@@ -28,6 +28,22 @@ const Details = props => {
       .catch(error => console.log(error));
   }, []);
 
+  const dataComp = (title, value) => {
+    return (
+      <View style={{width: deviceWidth - 60}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <Text style={{color: 'gray', fontSize: 22}}>{title}</Text>
+          <Text style={{color: 'white', fontSize: 22}}>{value}</Text>
+        </View>
+      </View>
+    );
+  };
+
   return (
     <View>
       <ImageBackground
@@ -57,24 +73,29 @@ const Details = props => {
           />
         </View>
         {data ? (
-          <View
-            style={{
-              justifyContent: 'space-evenly',
-              flexDirection: 'column',
-              alignItems: 'center',
-              height: deviceHeight - 100,
-            }}>
-            <View>
-              <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
-              <Text style={{fontSize: 22, color: 'white'}}>
-                {data['weather'][0]['main']}
+          <>
+            <View
+              style={{
+                justifyContent: 'space-evenly',
+                flexDirection: 'column',
+                alignItems: 'center',
+                height: deviceHeight - 100,
+              }}>
+              <View>
+                <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
+                <Text style={{fontSize: 22, color: 'white'}}>
+                  {data['weather'][0]['main']}
+                </Text>
+              </View>
+              <Text style={{color: 'white', fontSize: 64}}>
+                {(data['main']['temp'] - 273).toFixed(2)}&deg; C
               </Text>
+              <Text style={{color: 'white', fontSize: 22}}>
+                Weather Details
+              </Text>
+              {dataComp('Wind', data['wind']['speed'])}
             </View>
-            <Text style={{color: 'white', fontSize: 64}}>
-              {(data['main']['temp'] - 273).toFixed(2)}&deg; C
-            </Text>
-            <Text style={{color: 'white', fontSize: 19}}>Weather Details</Text>
-          </View>
+          </>
         ) : (
           <ActivityIndicator size={'large'} />
         )}
