@@ -98,7 +98,10 @@ const Home = () => {
           </Text>
           <FlatList
             data={cities}
-            renderItem={item => <Card name={item.name} image={item.image} />}
+            renderItem={item => {
+              console.log('item>>>>>>>>>>>>>>', item);
+              return <Card name={item.item.name} image={item.item.image} />;
+            }}
           />
         </View>
       </View>
