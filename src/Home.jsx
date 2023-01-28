@@ -1,6 +1,7 @@
 import React from 'react';
-import {ImageBackground, Text, View} from 'react-native';
+import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Home = () => {
   return (
@@ -10,6 +11,13 @@ const Home = () => {
         style={{height: deviceHeight, width: deviceWidth}}
         imageStyle={{opacity: 0.6, backgroundColor: 'black'}}
       />
+      <View style={{position: 'absolute'}}>
+        <View>
+          <TouchableOpacity>
+            <Icon name="menu" size={46} color="white" />
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
