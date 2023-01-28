@@ -6,7 +6,6 @@ import {
   Image,
   TouchableOpacity,
   ActivityIndicator,
-  Alert,
 } from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -14,6 +13,8 @@ import {API_KEY} from './Constants';
 const Details = props => {
   const {name} = props.route.params;
   const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -24,9 +25,12 @@ const Details = props => {
       })
       .then(data => {
         setData(data);
-        console.log(data);
+        setIsLoading(false);
       })
-      .catch(error => console.log(error));
+      .catch(err => {
+        setIsError(true);
+        setIsLoading(false);
+      });
   }, [name]);
 
   const dataComp = (title, value) => {
@@ -73,36 +77,35 @@ const Details = props => {
             style={{height: 46, width: 46, borderRadius: 50}}
           />
         </View>
-        {data ? (
-          <>
-            <View
-              style={{
-                justifyContent: 'space-evenly',
-                flexDirection: 'column',
-                alignItems: 'center',
-                height: deviceHeight - 100,
-              }}>
-              <View>
-                <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
-                <Text
-                  style={{fontSize: 22, color: 'white', textAlign: 'center'}}>
-                  {data['weather'][0]['main']}
-                </Text>
-              </View>
-              <Text style={{color: 'white', fontSize: 64}}>
-                {(data['main']['temp'] - 273).toFixed(2)}&deg; C
-              </Text>
-              <Text style={{color: 'white', fontSize: 22}}>
-                Weather Details
-              </Text>
-              {dataComp('Wind', data['wind']['speed'])}
-              {dataComp('Pressure', data['main']['pressure'])}
-              {dataComp('Humidity', `${data['main']['humidity']}%`)}
-              {dataComp('Visibility', data['visibility'])}
-            </View>
-          </>
-        ) : (
+        {isLoading ? (
           <ActivityIndicator size={80} color="white" />
+        ) : isError ? (
+          <Text style={{color: 'red', fontSize: 40, textAlign: 'center'}}>
+            Error retrieving data
+          </Text>
+        ) : (
+          <View
+            style={{
+              justifyContent: 'space-evenly',
+              flexDirection: 'column',
+              alignItems: 'center',
+              height: deviceHeight - 100,
+            }}>
+            <View>
+              <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
+              <Text style={{fontSize: 22, color: 'white', textAlign: 'center'}}>
+                {data['weather'][0]['main']}
+              </Text>
+            </View>
+            <Text style={{color: 'white', fontSize: 64}}>
+              {(data['main']['temp'] - 273).toFixed(2)}&deg; C
+            </Text>
+            <Text style={{color: 'white', fontSize: 22}}>Weather Details</Text>
+            {dataComp('Wind', data['wind']['speed'])}
+            {dataComp('Pressure', data['main']['pressure'])}
+            {dataComp('Humidity', `${data['main']['humidity']}%`)}
+            {dataComp('Visibility', data['visibility'])}
+          </View>
         )}
       </View>
     </View>
