@@ -8,6 +8,7 @@ const Home = () => {
       <ImageBackground
         source={require('../assets/images/image2.jpg')}
         style={{height: deviceHeight, width: deviceWidth}}
+        imageStyle={{opacity: 0.6, backgroundColor: 'black'}}
       />
     </View>
   );
