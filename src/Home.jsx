@@ -1,8 +1,12 @@
 import React from 'react';
-import {Text} from 'react-native/types';
+import {Text, View} from 'react-native';
 
 const Home = () => {
-  return <Text>Home</Text>;
+  return (
+    <View>
+      <Text>Home</Text>
+    </View>
+  );
 };
 
 export default Home;
