@@ -94,17 +94,19 @@ const Details = props => {
             <View>
               <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
               <Text style={{fontSize: 22, color: 'white', textAlign: 'center'}}>
-                {data['weather'][0]['main']}
+                {data && data['weather'] && data['weather'][0]['main']}
               </Text>
             </View>
             <Text style={{color: 'white', fontSize: 64}}>
-              {(data['main']['temp'] - 273).toFixed(2)}&deg; C
+              {(data && data['main'] && data['main']['temp'] - 273)?.toFixed(2)}
+              &deg; C
             </Text>
             <Text style={{color: 'white', fontSize: 22}}>Weather Details</Text>
-            {dataComp('Wind', data['wind']['speed'])}
-            {dataComp('Pressure', data['main']['pressure'])}
-            {dataComp('Humidity', `${data['main']['humidity']}%`)}
-            {dataComp('Visibility', data['visibility'])}
+            {data['wind'] && dataComp('Wind', data['wind']['speed'])}
+            {data['main'] && dataComp('Pressure', data['main']['pressure'])}
+            {data['main'] &&
+              dataComp('Humidity', `${data['main']['humidity']}%`)}
+            {data['visibility'] && dataComp('Visibility', data['visibility'])}
           </View>
         )}
       </View>
