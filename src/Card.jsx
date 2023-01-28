@@ -1,10 +1,15 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {ImageBackground, Text, View} from 'react-native';
+import {deviceHeight, deviceWidth} from './Diamension';
 
 const Card = ({name, image}) => {
+  console.log('image', image);
   return (
     <View>
-      <Text>{name}</Text>
+      <ImageBackground
+        source={image}
+        style={{height: deviceHeight / 5, width: deviceWidth / 2 - 50}}
+      />
     </View>
   );
 };
