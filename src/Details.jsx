@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   Text,
   View,
@@ -8,9 +8,23 @@ import {
 } from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {API_KEY} from './Constants';
 const Details = props => {
   const {name} = props.route.params;
-  console.log('name', name);
+
+  useEffect(() => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_KEY}`,
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
   return (
     <View>
       <ImageBackground
