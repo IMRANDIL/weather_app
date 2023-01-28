@@ -96,7 +96,11 @@ const Home = props => {
               }}
             />
             <TouchableOpacity
-              onPress={() => props.navigation.navigate('Details')}>
+              onPress={() =>
+                props.navigation.navigate('Details', {
+                  name: city,
+                })
+              }>
               <Icon
                 name="search"
                 size={22}

@@ -1,7 +1,9 @@
 import React from 'react';
 import {Text} from 'react-native';
 
-const Details = () => {
+const Details = props => {
+  const {name} = props.route.params;
+  console.log('name', name);
   return <Text>Details</Text>;
 };
 
