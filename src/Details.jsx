@@ -14,7 +14,7 @@ const Details = props => {
   return (
     <View>
       <ImageBackground
-        source={require('../assets/images/image2.jpg')}
+        source={require('../assets/images/image1.jpg')}
         style={{height: deviceHeight, width: deviceWidth}}
         imageStyle={{opacity: 0.6, backgroundColor: 'black'}}
       />
