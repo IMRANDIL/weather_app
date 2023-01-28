@@ -12,7 +12,7 @@ import {deviceHeight, deviceWidth} from './Diamension';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Card from './Card';
 
-const Home = () => {
+const Home = props => {
   const [city, setCity] = useState();
 
   const cities = [
@@ -95,7 +95,8 @@ const Home = () => {
                 position: 'relative',
               }}
             />
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate('Details')}>
               <Icon
                 name="search"
                 size={22}
