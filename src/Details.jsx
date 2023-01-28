@@ -56,8 +56,14 @@ const Details = props => {
             style={{height: 46, width: 46, borderRadius: 50}}
           />
         </View>
+        {data ? (
+          <View>
+            <Text style={{color: 'white', fontSize: 40}}>{name}</Text>
+          </View>
+        ) : (
+          <ActivityIndicator size={'large'} />
+        )}
       </View>
-      {data ? <Text>data</Text> : <ActivityIndicator size={'large'} />}
     </View>
   );
 };
