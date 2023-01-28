@@ -13,11 +13,12 @@ const Card = ({name, image}) => {
       <View style={{position: 'absolute', height: '100%', width: '100%'}}>
         <Text
           style={{
-            fontSize: 22,
+            fontSize: 30,
+            fontWeight: 'bold',
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            color: 'black',
+            color: 'red',
             textAlignVertical: 'center',
           }}>
           {name}
