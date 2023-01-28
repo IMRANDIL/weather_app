@@ -99,7 +99,6 @@ const Home = () => {
           <FlatList
             data={cities}
             renderItem={item => {
-              console.log('item>>>>>>>>>>>>>>', item);
               return <Card name={item.item.name} image={item.item.image} />;
             }}
           />

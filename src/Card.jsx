@@ -3,7 +3,6 @@ import {ImageBackground, Text, View} from 'react-native';
 import {deviceHeight, deviceWidth} from './Diamension';
 
 const Card = ({name, image}) => {
-  console.log('image', image);
   return (
     <View>
       <ImageBackground
