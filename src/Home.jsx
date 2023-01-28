@@ -28,6 +28,7 @@ const Home = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
+            width: deviceWidth - 20,
           }}>
           <TouchableOpacity>
             <Icon name="menu" size={46} color="white" />
